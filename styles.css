@@ -1,0 +1,311 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    
+}
+
+
+
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5); 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.25rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+body.dark-mode .hero-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+.statistics {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.stat-item {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 30%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    color: #4CAF50;
+}
+
+.stat-item p {
+    font-size: 1.25rem;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-item[data-stat] {
+    opacity: 0;
+}
+
+.stat-item[data-stat]:not([style*="opacity: 0"]) {
+    animation: revealStats 2s ease-in-out forwards;
+}
+
+@keyframes revealStats {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.success-stories {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+}
+
+.success-stories h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.story-slider {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+}
+
+.story-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.floating-elements {
+    position: fixed;
+    top: 10%;
+    right: 0;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.leaf {
+    width: 40px;
+    height: 40px;
+    background-image: url('leaf.png');
+    background-size: contain;
+    animation: floatLeaf 5s infinite linear;
+}
+
+.bird {
+    width: 50px;
+    height: 50px;
+    background-image: url('bird.png');
+    background-size: contain;
+    animation: floatBird 7s infinite linear;
+    animation-delay: 2s;
+}
+
+@keyframes floatLeaf {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(30px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
+
+@keyframes floatBird {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(40px) translateX(-20px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: none;
+}
+
+.back-to-top:hover {
+    background-color: #45a049;
+}
+
+.bg-video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.bg-video video{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.effect{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+.thank-you-header {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.thank-you-overlay {
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 50px 20px;
+    border-radius: 10px;
+}
+
+.thank-you-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.thank-you-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:#4CAF50;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+
+
+
+.registration-form {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.registration-form h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.registration-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.registration-form label {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.registration-form input, .registration-form select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
